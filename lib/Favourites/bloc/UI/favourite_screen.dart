@@ -9,8 +9,8 @@ class FavScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Favourite List Bloc')),
-      body: Column(
+      appBar: AppBar(title: const Text('Favourite List Bloc')),
+      body: const Column(
         children: <Widget>[
           Expanded(
             child: ItemList(),
@@ -23,6 +23,8 @@ class FavScreen extends StatelessWidget {
 }
 
 class ItemList extends StatelessWidget {
+  const ItemList({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FavBloc, FavState>(
@@ -43,13 +45,15 @@ class ItemList extends StatelessWidget {
             },
           );
         }
-        return Center(child: Text('No Favourites Yet'));
+        return const Center(child: Text('No Favourites Yet'));
       },
     );
   }
 }
 
 class AddItemButton extends StatelessWidget {
+  const AddItemButton({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -59,7 +63,7 @@ class AddItemButton extends StatelessWidget {
             name: 'Item ${DateTime.now()}');
         context.read<FavBloc>().add(AddToFavourite(item));
       },
-      child: Text('Add Random Item to Favourites'),
+      child: const Text('Add Random Item to Favourites'),
     );
   }
 }
