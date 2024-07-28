@@ -1,7 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:practice/items.dart';
-
 part 'fav_event.dart';
 part 'fav_state.dart';
 
