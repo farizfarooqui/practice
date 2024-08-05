@@ -10,14 +10,14 @@ abstract class FavEvent extends Equatable {
 class AddToFavourite extends FavEvent {
   final Item item;
 
-  AddToFavourite(this.item);
+  const AddToFavourite(this.item);
   @override
   List<Object> get props => [];
 }
 class RemoveFromFavourite  extends FavEvent {
    final Item item;
 
-  RemoveFromFavourite(this.item);
+  const RemoveFromFavourite(this.item);
   @override
   List<Object> get props => [item];
 }
